@@ -1,0 +1,34 @@
+﻿@page
+
+@{
+    var items = (List<ItemModel>)ViewBag.items;
+}
+<body>
+    <h1>Item List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                @foreach (var i in items)
+                {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.Name</td>
+                <td><a href="@Url.Action("Edit", "ItemController", new { id = @i.id })" class="btn btn-warning" role="button">Edit</a>
+                    <a href="@Url.Action("Delete", "ItemController", new { id = @i.id })" class="btn btn-danger" role="button">Delete</a></td>
+               
+            </tr>
+                }
+                
+            </tbody>
+    </table>
+    <a asp-action="Create" class="btn btn-outline-primary">New</a>
+</body>

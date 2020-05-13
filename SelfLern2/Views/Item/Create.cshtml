@@ -1,0 +1,18 @@
+﻿@model SelfLern2.Models.ItemModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form method="post">
+    <input asp-for="id" type="hidden" />
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" type="text" class="form-control" id="studentNumber">
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var teams = ViewBag.teams;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Football</h1>
+    <p>Get Data from api-football by Jeremy / api-sports.</p>
+</div>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        League
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/4">Ligue 1</a>
+        <a class="dropdown-item" href="/2">premier league</a>
+        <a class="dropdown-item" href="/8">Bundesliga</a>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th scope="col">Team Name</th>
+            <th scope="col">Venue Name</th>
+            <th scope="col">Logo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in teams)
+        {
+            <tr>
+
+                <td>@i.name</td>
+                <td>@i.venue_name</td>
+                <td><img src="@i.logo" width="100" height="100"></td>
+            </tr>
+
+            
+        }
+
+    </tbody>
+</table>
+
+
